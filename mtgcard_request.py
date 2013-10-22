@@ -5,6 +5,9 @@ def mtgcard_request(cardname, cardset):
 
    r = requests.get('http://magictcgprices.appspot.com/api/cfb/price.json?cardname=%s&cardset=%s' % (cardname, cardset))
    data = json.loads(r.text)
+   # ebay:  http://magictcgprices.appspot.com/api/ebay/price.json?cardname=%s&cardset=%s
+   # tcgplayer:  http://magictcgprices.appspot.com/api/tcgplayer/price.json?cardname=%s&cardset=%s
+   # channel fireball:  http://magictcgprices.appspot.com/api/cfb/price.json?cardname=%s&setname=%s
 
    price = data[0]
 
