@@ -7,7 +7,7 @@ def mtgcard_request(cardname, cardset):
    response = requests.get('http://magictcgprices.appspot.com/api/tcgplayer/price.json?cardname=%s&cardset=%s' % (cardname, cardset)) # Card Image
    data = json.loads(response.text)
 
-   price = "Low: %s \nMedium: %s \nHigh: %s" % data[0], data[1], data[2]
+   price = "Low: %s \nMedium: %s \nHigh: %s" % (data[0], data[1], data[2])
 
    """
    Different places to check card prices, all using magictcgprices api:
