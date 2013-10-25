@@ -11,7 +11,6 @@ def mtgCardRequest(cardname, cardset):
    tcgplayer_response = requests.get('http://magictcgprices.appspot.com/api/tcgplayer/price.json?cardname=%s&cardset=%s' % (cardname, cardset))
    tcg_data = json.loads(tcgplayer_response.text)
 
-
    # Set variable for each different api location
    ebay_price = ebay_data[0]
    tcg_low = tcg_data[0]
@@ -27,7 +26,6 @@ def mtgCardRequest(cardname, cardset):
    }
 
    return all_prices
-   
 
 if __name__ == "__main__":
 	import sys
