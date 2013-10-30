@@ -12,12 +12,23 @@ def mtgCardRequest(cardname, cardset):
    tcg_data = json.loads(tcgplayer_response.text)
 
    # Set variable for each different api location
-   ebay_price = ebay_data[0]
+   # ebay_price = ebay_data[0]
    tcg_low = tcg_data[0]
    tcg_med = tcg_data[1]
    tcg_high = tcg_data[2]
 
    # Price dictionary
+   if tcg_data['magic']:
+      response = {
+         # 'Ebay': ebay_price,
+         'tcgplayer_low': tcg_low,
+         'tcplayer_medium': tcg_med,
+         'tcgplayer_high': tcg_high
+      }
+   else:
+      response = None
+
+   # Price dictionary, originally how I had it. Works, I don't thnk the above does though...
    all_prices = {
          'Ebay': ebay_price,
          'TCGPlayer Low': tcg_low,
