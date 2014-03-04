@@ -1,7 +1,7 @@
 AL-MTG 
 ======
 
-MTG card price checker API's 
+Magic The Gathering card price checker API's 
 
 
 ### Ebay (lowest price)
